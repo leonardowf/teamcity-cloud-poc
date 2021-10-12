@@ -81,7 +81,7 @@ object Checks : BuildType({
             shellScript = """
                 cd nodejs-project
                 
-                yarn
+                yarn install --ignore-engines
                 
                 # unit tests
                 yarn test
