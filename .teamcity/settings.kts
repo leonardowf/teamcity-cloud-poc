@@ -79,6 +79,8 @@ object Checks : BuildType({
         }
         nodeJS {
             shellScript = """
+                cd nodejs-project
+                
                 npm install
                 
                 # unit tests
