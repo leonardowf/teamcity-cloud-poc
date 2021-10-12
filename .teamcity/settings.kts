@@ -97,7 +97,7 @@ object IOSContainer : BuildType({
 
     steps {
         script {
-            name = "Banana2"
+            name = "Apple"
             scriptContent = "./ios.sh"
         }
     }
