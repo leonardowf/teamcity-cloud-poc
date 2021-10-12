@@ -92,7 +92,6 @@ object Checks : BuildType({
                 # test coverage
                 yarn test:cov
             """.trimIndent()
-            dockerImage = "node:7"
         }
     }
 
