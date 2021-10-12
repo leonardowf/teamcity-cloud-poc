@@ -92,6 +92,7 @@ object Checks : BuildType({
                 # test coverage
                 ${'$'} npm run test:cov
             """.trimIndent()
+            dockerImage = "node:7"
         }
     }
 
