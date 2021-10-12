@@ -70,7 +70,7 @@ object Checks : BuildType({
     name = "Checks"
 
     vcs {
-        root(DslContext.settingsRoot, "+:nodejs-project => .")
+        root(DslContext.settingsRoot)
     }
 
     steps {
