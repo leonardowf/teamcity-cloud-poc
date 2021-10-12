@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
@@ -75,6 +76,20 @@ object Checks : BuildType({
     steps {
         script {
             scriptContent = "./checks.sh"
+        }
+        nodeJS {
+            shellScript = """
+                npm install
+                
+                # unit tests
+                ${'$'} npm run test
+                
+                # e2e tests
+                ${'$'} npm run test:e2e
+                
+                # test coverage
+                ${'$'} npm run test:cov
+            """.trimIndent()
         }
     }
 
